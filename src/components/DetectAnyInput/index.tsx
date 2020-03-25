@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface DetectAnyInputProps {
     children: React.ReactNode;
@@ -6,7 +6,23 @@ interface DetectAnyInputProps {
 }
 
 function DetectAnyInput(props: DetectAnyInputProps) {
-    return <div onClick={props.onAnyInput}>{props.children}</div>;
+    const rootRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const current = rootRef.current;
+        if (current !== null) {
+            current.focus();
+        }
+    }, []);
+    return (
+        <div
+            ref={rootRef}
+            onClick={props.onAnyInput}
+            onKeyDown={props.onAnyInput}
+            tabIndex={0}
+        >
+            {props.children}
+        </div>
+    );
 }
 
 export default DetectAnyInput;

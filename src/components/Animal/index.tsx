@@ -17,7 +17,7 @@ class Animal extends React.Component<IAnimalProps> {
             <motion.div
                 className="animal"
                 animate={{
-                    scale: [0, 1, 0]
+                    scale: [0, 1, 1, 1, 0]
                 }}
                 initial={{
                     x: `${this.initialX}vw`,
