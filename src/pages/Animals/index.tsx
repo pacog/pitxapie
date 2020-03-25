@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import DetectAnyInput from "components/DetectAnyInput";
 import { motion } from "framer-motion";
 import Animal from "components/Animal";
+import { v4 as uuid } from "uuid";
 import "./style.css";
 
 function Animals() {
+    const [shownAnimals, setShownAnimals] = useState<string[]>([]);
+
     return (
         <DetectAnyInput
             onAnyInput={() => {
-                console.log("hola");
+                setShownAnimals([...shownAnimals, uuid()]);
             }}
         >
             <motion.div
@@ -24,7 +27,16 @@ function Animals() {
                 transition={{ yoyo: Infinity, duration: 10, ease: "linear" }}
                 className="animals full-screen"
             >
-                <Animal />
+                {shownAnimals.map(id => (
+                    <Animal
+                        key={id}
+                        onAnimationEnd={() => {
+                            setShownAnimals(
+                                shownAnimals.filter(animalId => animalId !== id)
+                            );
+                        }}
+                    />
+                ))}
             </motion.div>
         </DetectAnyInput>
     );

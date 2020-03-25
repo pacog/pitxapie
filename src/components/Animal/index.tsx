@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Lion from "./lion.svg";
 import "./style.css";
 
-class Animal extends React.Component {
+interface AnimalProps {
+    onAnimationEnd: () => void;
+}
+
+class Animal extends React.Component<AnimalProps> {
     initialY = getRandomY();
 
     finalY = getRandomY();
@@ -13,18 +17,18 @@ class Animal extends React.Component {
             <motion.div
                 className="animal"
                 animate={{
-                    x: "-110vw",
+                    x: "-75vw",
                     y: `${this.finalY}vh`
                 }}
                 initial={{
-                    x: "110vw",
+                    x: "75vw",
                     y: `${this.initialY}vh`
                 }}
                 transition={{
-                    duration: 4,
+                    duration: 2,
                     ease: "linear"
                 }}
-                onAnimationComplete={() => console.log("end")}
+                onAnimationComplete={this.props.onAnimationEnd}
             >
                 <img src={Lion} alt="Lion" />
             </motion.div>
@@ -33,7 +37,7 @@ class Animal extends React.Component {
 }
 
 function getRandomY() {
-    return 20 + Math.floor(Math.random() * 60);
+    return -50 + Math.floor(Math.random() * 100);
 }
 
 export default Animal;

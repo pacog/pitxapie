@@ -1,4 +1,7 @@
 .animal {
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
     height: 50vh;
     width: 50vw;
     transform-origin: 50% 50%;
