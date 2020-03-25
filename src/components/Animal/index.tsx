@@ -1,43 +1,39 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Lion from "./lion.svg";
+import { getRandomAnimal } from "./getRandomAnimal";
 import "./style.css";
 
-interface AnimalProps {
+interface IAnimalProps {
     onAnimationEnd: () => void;
 }
 
-class Animal extends React.Component<AnimalProps> {
-    initialY = getRandomY();
-
-    finalY = getRandomY();
+class Animal extends React.Component<IAnimalProps> {
+    initialX = getRandomPosition();
+    initialY = getRandomPosition();
+    randomAnimal = getRandomAnimal();
 
     render() {
         return (
             <motion.div
                 className="animal"
                 animate={{
-                    x: "-75vw",
-                    y: `${this.finalY}vh`
+                    scale: [0, 1, 0]
                 }}
                 initial={{
-                    x: "75vw",
-                    y: `${this.initialY}vh`
-                }}
-                transition={{
-                    duration: 2,
-                    ease: "linear"
+                    x: `${this.initialX}vw`,
+                    y: `${this.initialY}vh`,
+                    scale: 0.1
                 }}
                 onAnimationComplete={this.props.onAnimationEnd}
             >
-                <img src={Lion} alt="Lion" />
+                <img src={this.randomAnimal.src} alt={this.randomAnimal.name} />
             </motion.div>
         );
     }
 }
 
-function getRandomY() {
-    return -50 + Math.floor(Math.random() * 100);
+function getRandomPosition() {
+    return -25 + Math.floor(Math.random() * 50);
 }
 
 export default Animal;
