@@ -1,0 +1,10 @@
+.animal {
+    height: 50vh;
+    width: 50vw;
+    transform-origin: 50% 50%;
+}
+.animal img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

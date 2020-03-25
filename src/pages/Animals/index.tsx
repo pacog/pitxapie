@@ -1,7 +1,7 @@
 import React from "react";
 import DetectAnyInput from "components/DetectAnyInput";
 import { motion } from "framer-motion";
-
+import Animal from "components/Animal";
 import "./style.css";
 
 function Animals() {
@@ -23,7 +23,9 @@ function Animals() {
                 }}
                 transition={{ yoyo: Infinity, duration: 10, ease: "linear" }}
                 className="animals full-screen"
-            ></motion.div>
+            >
+                <Animal />
+            </motion.div>
         </DetectAnyInput>
     );
 }
