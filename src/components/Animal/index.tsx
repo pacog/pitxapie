@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { getRandomAnimal } from "./getRandomAnimal";
+import { playSound } from "utils/play-sound";
+import { getRandomFromArray } from "utils/random";
 import "./style.css";
 
 interface IAnimalProps {
@@ -11,6 +13,11 @@ class Animal extends React.Component<IAnimalProps> {
     initialX = getRandomPosition();
     initialY = getRandomPosition();
     randomAnimal = getRandomAnimal();
+
+    componentDidMount() {
+        const sound = getRandomFromArray(this.randomAnimal.sounds);
+        playSound(process.env.PUBLIC_URL + sound);
+    }
 
     render() {
         return (
