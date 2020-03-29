@@ -6,6 +6,8 @@ interface DetectAnyInputProps {
     onAnyInput: () => void;
 }
 
+const isTouchSupported = "ontouchstart" in document.documentElement;
+
 class DetectAnyInput extends React.Component<DetectAnyInputProps> {
     constructor(props: DetectAnyInputProps) {
         super(props);
@@ -27,7 +29,12 @@ class DetectAnyInput extends React.Component<DetectAnyInputProps> {
         return (
             <div
                 ref={this.rootRef}
-                onMouseUp={this.onAnyInput}
+                onMouseUp={() => {
+                    if (isTouchSupported) {
+                        return;
+                    }
+                    this.onAnyInput();
+                }}
                 onKeyUp={this.onAnyInput}
                 onTouchStart={this.onAnyInput}
                 tabIndex={0}
