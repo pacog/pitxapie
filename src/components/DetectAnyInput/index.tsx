@@ -1,28 +1,41 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { throttle } from "lodash";
 
 interface DetectAnyInputProps {
     children: React.ReactNode;
     onAnyInput: () => void;
 }
 
-function DetectAnyInput(props: DetectAnyInputProps) {
-    const rootRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        const current = rootRef.current;
-        if (current !== null) {
-            current.focus();
+class DetectAnyInput extends React.Component<DetectAnyInputProps> {
+    constructor(props: DetectAnyInputProps) {
+        super(props);
+        this.rootRef = React.createRef<HTMLDivElement>();
+        this.onAnyInput = throttle(props.onAnyInput, 300);
+    }
+
+    rootRef: React.RefObject<HTMLDivElement>;
+
+    onAnyInput: () => void;
+
+    componentDidMount() {
+        if (this.rootRef.current !== null) {
+            this.rootRef.current.focus();
         }
-    }, []);
-    return (
-        <div
-            ref={rootRef}
-            onClick={props.onAnyInput}
-            onKeyDown={props.onAnyInput}
-            tabIndex={0}
-        >
-            {props.children}
-        </div>
-    );
+    }
+
+    render() {
+        return (
+            <div
+                ref={this.rootRef}
+                onMouseUp={this.onAnyInput}
+                onKeyUp={this.onAnyInput}
+                onTouchStart={this.onAnyInput}
+                tabIndex={0}
+            >
+                {this.props.children}
+            </div>
+        );
+    }
 }
 
 export default DetectAnyInput;
