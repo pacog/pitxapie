@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import DetectAnyInput from "components/DetectAnyInput";
 import ColorChangeBG from "components/ColorChangeBG";
+import Face from "components/Face";
 import "./style.css";
 
 function Faces() {
+    const [canShowFace, setCanShowFace] = useState(true);
+
     return (
         <DetectAnyInput onAnyInput={() => {}}>
             <ColorChangeBG
                 className="faces"
-                colorList={["#5e548e", "#9f86c0", "#be95c4"]}
+                colorList={["#40916c", "#52b788", "#74c69d"]}
             >
-                Hola
+                <Face />
             </ColorChangeBG>
         </DetectAnyInput>
     );

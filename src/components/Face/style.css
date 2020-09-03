@@ -1,0 +1,17 @@
+.face {
+    position: absolute;
+    bottom: 0vh;
+    left: 25vw;
+    height: 50vh;
+    width: 50vw;
+    transform-origin: 50% 50%;
+    pointer-events: none;
+    filter: drop-shadow(10px 0 0 #fff) drop-shadow(-10px 0 0 #fff)
+        drop-shadow(0px -10px 0 #fff) drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+.face img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+}
