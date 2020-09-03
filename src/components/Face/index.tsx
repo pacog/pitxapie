@@ -1,12 +1,27 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Mama from "./mama.png";
 import "./style.css";
 
-function Face() {
+interface IFaceProps {
+    onAnimationEnd: () => void;
+}
+
+function Face({ onAnimationEnd }: IFaceProps) {
     return (
-        <div className="face">
+        <motion.div
+            className="face"
+            animate={{
+                y: ["100%", "0%", "0%", "100%"],
+            }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            initial={{
+                y: "100%",
+            }}
+            onAnimationComplete={onAnimationEnd}
+        >
             <img src={Mama} alt={"Mama"} />
-        </div>
+        </motion.div>
     );
 }
 

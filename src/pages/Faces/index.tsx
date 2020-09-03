@@ -5,15 +5,21 @@ import Face from "components/Face";
 import "./style.css";
 
 function Faces() {
-    const [canShowFace, setCanShowFace] = useState(true);
+    const [showingFace, setShowingFace] = useState(false);
 
     return (
-        <DetectAnyInput onAnyInput={() => {}}>
+        <DetectAnyInput
+            onAnyInput={() => {
+                setShowingFace(true);
+            }}
+        >
             <ColorChangeBG
                 className="faces"
                 colorList={["#40916c", "#52b788", "#74c69d"]}
             >
-                <Face />
+                {showingFace && (
+                    <Face onAnimationEnd={() => setShowingFace(false)} />
+                )}
             </ColorChangeBG>
         </DetectAnyInput>
     );
