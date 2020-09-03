@@ -1,5 +1,5 @@
-import React from "react";
-import { throttle } from "lodash";
+import React, { useRef, useEffect } from "react";
+import { useThrottleFn } from "ahooks";
 
 interface IDetectAnyInputProps {
     children: React.ReactNode;
@@ -8,41 +8,42 @@ interface IDetectAnyInputProps {
 
 const isTouchSupported = "ontouchstart" in document.documentElement;
 
-class DetectAnyInput extends React.Component<IDetectAnyInputProps> {
-    constructor(props: IDetectAnyInputProps) {
-        super(props);
-        this.rootRef = React.createRef<HTMLDivElement>();
-        this.onAnyInput = throttle(props.onAnyInput, 300);
-    }
-
-    rootRef: React.RefObject<HTMLDivElement>;
-
-    onAnyInput: () => void;
-
-    componentDidMount() {
-        if (this.rootRef.current !== null) {
-            this.rootRef.current.focus();
+function DetectAnyInput({ onAnyInput, children }: IDetectAnyInputProps) {
+    const rootRef = useRef<HTMLDivElement>(null);
+    const { run: onAnyInputThrottled, cancel: cancelThrottle } = useThrottleFn(
+        onAnyInput,
+        {
+            wait: 500,
+            trailing: false,
         }
-    }
+    );
 
-    render() {
-        return (
-            <div
-                ref={this.rootRef}
-                onMouseUp={() => {
-                    if (isTouchSupported) {
-                        return;
-                    }
-                    this.onAnyInput();
-                }}
-                onKeyUp={this.onAnyInput}
-                onTouchStart={this.onAnyInput}
-                tabIndex={0}
-            >
-                {this.props.children}
-            </div>
-        );
-    }
+    useEffect(() => {
+        if (rootRef.current !== null) {
+            rootRef.current.focus();
+        }
+    }, [rootRef]);
+
+    useEffect(() => {
+        return cancelThrottle;
+    }, [cancelThrottle]);
+
+    return (
+        <div
+            ref={rootRef}
+            onMouseUp={() => {
+                if (isTouchSupported) {
+                    return;
+                }
+                onAnyInputThrottled();
+            }}
+            onKeyUp={onAnyInputThrottled}
+            onTouchStart={onAnyInputThrottled}
+            tabIndex={0}
+        >
+            {children}
+        </div>
+    );
 }
 
 export default DetectAnyInput;
