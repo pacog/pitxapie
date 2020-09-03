@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 
-interface ColorChangeBGProps {
+interface IColorChangeBGProps {
     className?: string;
     colorList?: string[];
     children: React.ReactNode;
@@ -12,7 +12,7 @@ function ColorChangeBG({
     className = "",
     colorList = ["#5e548e", "#9f86c0", "#be95c4"],
     children,
-}: ColorChangeBGProps) {
+}: IColorChangeBGProps) {
     return (
         <motion.div
             animate={{

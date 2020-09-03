@@ -1,15 +1,15 @@
 import React from "react";
 import { throttle } from "lodash";
 
-interface DetectAnyInputProps {
+interface IDetectAnyInputProps {
     children: React.ReactNode;
     onAnyInput: () => void;
 }
 
 const isTouchSupported = "ontouchstart" in document.documentElement;
 
-class DetectAnyInput extends React.Component<DetectAnyInputProps> {
-    constructor(props: DetectAnyInputProps) {
+class DetectAnyInput extends React.Component<IDetectAnyInputProps> {
+    constructor(props: IDetectAnyInputProps) {
         super(props);
         this.rootRef = React.createRef<HTMLDivElement>();
         this.onAnyInput = throttle(props.onAnyInput, 300);
