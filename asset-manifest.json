@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/pitxapie/static/css/main.58808ba6.chunk.css",
-    "main.js": "/pitxapie/static/js/main.9d503798.chunk.js",
-    "main.js.map": "/pitxapie/static/js/main.9d503798.chunk.js.map",
-    "runtime-main.js": "/pitxapie/static/js/runtime-main.500ff3c9.js",
-    "runtime-main.js.map": "/pitxapie/static/js/runtime-main.500ff3c9.js.map",
-    "static/js/2.1b360773.chunk.js": "/pitxapie/static/js/2.1b360773.chunk.js",
-    "static/js/2.1b360773.chunk.js.map": "/pitxapie/static/js/2.1b360773.chunk.js.map",
+    "main.css": "/pitxapie/static/css/main.5c62100f.chunk.css",
+    "main.js": "/pitxapie/static/js/main.ac4d0107.chunk.js",
+    "main.js.map": "/pitxapie/static/js/main.ac4d0107.chunk.js.map",
+    "runtime-main.js": "/pitxapie/static/js/runtime-main.99fd8e7d.js",
+    "runtime-main.js.map": "/pitxapie/static/js/runtime-main.99fd8e7d.js.map",
+    "static/js/2.1614996e.chunk.js": "/pitxapie/static/js/2.1614996e.chunk.js",
+    "static/js/2.1614996e.chunk.js.map": "/pitxapie/static/js/2.1614996e.chunk.js.map",
     "index.html": "/pitxapie/index.html",
-    "precache-manifest.cb2bc7e50d5b3972056468d24231be4a.js": "/pitxapie/precache-manifest.cb2bc7e50d5b3972056468d24231be4a.js",
+    "precache-manifest.12ffe7dda04df1a6a90625bb70010931.js": "/pitxapie/precache-manifest.12ffe7dda04df1a6a90625bb70010931.js",
     "service-worker.js": "/pitxapie/service-worker.js",
-    "static/css/main.58808ba6.chunk.css.map": "/pitxapie/static/css/main.58808ba6.chunk.css.map",
-    "static/js/2.1b360773.chunk.js.LICENSE.txt": "/pitxapie/static/js/2.1b360773.chunk.js.LICENSE.txt",
+    "static/css/main.5c62100f.chunk.css.map": "/pitxapie/static/css/main.5c62100f.chunk.css.map",
+    "static/js/2.1614996e.chunk.js.LICENSE.txt": "/pitxapie/static/js/2.1614996e.chunk.js.LICENSE.txt",
     "static/media/boar.svg": "/pitxapie/static/media/boar.812db292.svg",
     "static/media/chick.svg": "/pitxapie/static/media/chick.4c04d0d8.svg",
     "static/media/chicken.svg": "/pitxapie/static/media/chicken.ac86d0fc.svg",
@@ -30,9 +30,9 @@
     "static/media/sheep.svg": "/pitxapie/static/media/sheep.da86707b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.500ff3c9.js",
-    "static/js/2.1b360773.chunk.js",
-    "static/css/main.58808ba6.chunk.css",
-    "static/js/main.9d503798.chunk.js"
+    "static/js/runtime-main.99fd8e7d.js",
+    "static/js/2.1614996e.chunk.js",
+    "static/css/main.5c62100f.chunk.css",
+    "static/js/main.ac4d0107.chunk.js"
   ]
 }

@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c8bcf96c0a120e4a7a6342fd01b91a7",
+    "revision": "cfccf4331da528d14f70605b05d17de7",
     "url": "/pitxapie/index.html"
   },
   {
-    "revision": "517883f7ca6a3d668264",
-    "url": "/pitxapie/static/css/main.58808ba6.chunk.css"
+    "revision": "afa429bb6bca2fc9cc75",
+    "url": "/pitxapie/static/css/main.5c62100f.chunk.css"
   },
   {
-    "revision": "172e61f5510669874bf5",
-    "url": "/pitxapie/static/js/2.1b360773.chunk.js"
+    "revision": "a3f0d1881fcf980602c8",
+    "url": "/pitxapie/static/js/2.1614996e.chunk.js"
   },
   {
-    "revision": "723926e814cd5eef92408003ea3452c9",
-    "url": "/pitxapie/static/js/2.1b360773.chunk.js.LICENSE.txt"
+    "revision": "6058598b6118c1080198395307cc8423",
+    "url": "/pitxapie/static/js/2.1614996e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "517883f7ca6a3d668264",
-    "url": "/pitxapie/static/js/main.9d503798.chunk.js"
+    "revision": "afa429bb6bca2fc9cc75",
+    "url": "/pitxapie/static/js/main.ac4d0107.chunk.js"
   },
   {
-    "revision": "c9e2410ea97f8f2cb4ba",
-    "url": "/pitxapie/static/js/runtime-main.500ff3c9.js"
+    "revision": "6004250f49b6cf5df184",
+    "url": "/pitxapie/static/js/runtime-main.99fd8e7d.js"
   },
   {
     "revision": "812db292a99c7fd676597f734a53b3b6",
