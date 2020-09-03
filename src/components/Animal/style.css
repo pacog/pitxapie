@@ -5,6 +5,7 @@
     height: 50vh;
     width: 50vw;
     transform-origin: 50% 50%;
+    pointer-events: none;
 }
 .animal img {
     height: 100%;
