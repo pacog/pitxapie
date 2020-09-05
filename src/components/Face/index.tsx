@@ -7,7 +7,10 @@ import kakitrien from "./kakitrien.png";
 import lola from "./lola.png";
 import mark from "./mark.png";
 import lucas from "./lucas.png";
-import { getRandomFromArray } from "utils/random";
+import {
+    getRandomFromArray,
+    getRandomFromArrayWithWeights,
+} from "utils/random";
 import "./style.css";
 
 interface IFaceProps {
@@ -15,12 +18,29 @@ interface IFaceProps {
 }
 
 const ALL_FACES = [mama, massimo, abuelomiguel, kakitrien, lola, mark, lucas];
-const ALTERNATIVE_POSITIONS = ["top", "left", "right", "bottom"];
+const ALTERNATIVE_POSITIONS = [
+    {
+        weight: 0.1,
+        value: "top",
+    },
+    {
+        weight: 0.1,
+        value: "left",
+    },
+    {
+        weight: 0.1,
+        value: "right",
+    },
+    {
+        weight: 0.7,
+        value: "bottom",
+    },
+];
 
 function Face({ onAnimationEnd }: IFaceProps) {
     const face = useMemo(() => getRandomFromArray(ALL_FACES), []);
     const position = useMemo(
-        () => getRandomFromArray(ALTERNATIVE_POSITIONS),
+        () => getRandomFromArrayWithWeights(ALTERNATIVE_POSITIONS),
         []
     );
     const animate = useMemo(() => {
