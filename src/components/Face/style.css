@@ -1,7 +1,7 @@
 .face {
     position: absolute;
-    height: 75vh;
-    width: 75vw;
+    height: 75vmin;
+    width: 75vmin;
     transform-origin: 50% 50%;
     pointer-events: none;
     filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
