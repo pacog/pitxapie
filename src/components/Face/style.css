@@ -1,14 +1,33 @@
 .face {
     position: absolute;
-    bottom: 0vh;
-    left: 25vw;
-    height: 50vh;
-    width: 50vw;
+    height: 75vh;
+    width: 75vw;
     transform-origin: 50% 50%;
     pointer-events: none;
-    filter: drop-shadow(10px 0 0 #fff) drop-shadow(-10px 0 0 #fff)
-        drop-shadow(0px -10px 0 #fff) drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0px -2px 0 #fff) drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
+
+.face-bottom {
+    bottom: 0vh;
+    left: 12.5vw;
+}
+
+.face-top {
+    top: 0vh;
+    left: 12.5vw;
+}
+
+.face-left {
+    left: 0vw;
+    top: 12.5vh;
+}
+
+.face-right {
+    right: 0vw;
+    top: 12.5vh;
+}
+
 .face img {
     height: 100%;
     width: 100%;
