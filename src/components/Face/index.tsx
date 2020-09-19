@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import aafke from "./aafke.png";
 import bisa from "./bisa.png";
@@ -41,37 +41,43 @@ interface IFaceProps {
     onAnimationEnd: () => void;
 }
 
-const ALL_FACES = [
-    aafke,
-    bisa,
-    inaki_aafke,
-    mama_1,
-    massimo_2,
-    abuela_carmen,
-    carla,
-    kakitrien,
-    mama_2,
-    massimo_alex,
-    abuelo_jose,
-    carmen,
-    lola,
-    manuel,
-    rum,
-    abuelomiguel,
-    carmen_aritz,
-    lucas,
-    manuel_agustin,
-    rum_niki,
-    andreu_1,
-    catrien_ana,
-    maka,
-    mark,
-    tres_locos,
-    andreu_2,
-    giovane,
-    mama,
-    massimo,
-    xabi,
+interface IFaceInfo {
+    fileName: string;
+    name: string;
+    language: string;
+}
+
+const ALL_FACES: IFaceInfo[] = [
+    { fileName: aafke, name: "aafke", language: "en-US" },
+    { fileName: bisa, name: "bisabuela", language: "es-ES" },
+    { fileName: inaki_aafke, name: "iñaki y aafke", language: "es-ES" },
+    { fileName: mama_1, name: "Mamá", language: "es-ES" },
+    { fileName: massimo_2, name: "massimo", language: "it-IT" },
+    { fileName: abuela_carmen, name: "abuela carmen", language: "es-ES" },
+    { fileName: carla, name: "carla", language: "es-ES" },
+    { fileName: kakitrien, name: "kaki catrien", language: "es-ES" },
+    { fileName: mama_2, name: "mamá", language: "es-ES" },
+    { fileName: massimo_alex, name: "massimo alex", language: "it-IT" },
+    { fileName: abuelo_jose, name: "abuelo jose", language: "es-ES" },
+    { fileName: carmen, name: "carmen", language: "es-ES" },
+    { fileName: lola, name: "lola", language: "es-ES" },
+    { fileName: manuel, name: "manuel", language: "es-ES" },
+    { fileName: rum, name: "rum", language: "es-ES" },
+    { fileName: abuelomiguel, name: "abuelo miguel", language: "es-ES" },
+    { fileName: carmen_aritz, name: "carmen y aritz", language: "es-ES" },
+    { fileName: lucas, name: "lucas", language: "es-ES" },
+    { fileName: manuel_agustin, name: "manuel y agustin", language: "es-ES" },
+    { fileName: rum_niki, name: "rum y niki", language: "es-ES" },
+    { fileName: andreu_1, name: "andreu", language: "es-ES" },
+    { fileName: catrien_ana, name: "catrien en ana", language: "nl-NL" },
+    { fileName: maka, name: "maka", language: "es-ES" },
+    { fileName: mark, name: "mark", language: "en-US" },
+    { fileName: tres_locos, name: "tres locos", language: "es-ES" },
+    { fileName: andreu_2, name: "andreu", language: "es-ES" },
+    { fileName: giovane, name: "giovane", language: "pt-BR" },
+    { fileName: mama, name: "mamá", language: "es-ES" },
+    { fileName: massimo, name: "massimo", language: "it-IT" },
+    { fileName: xabi, name: "xabi", language: "es-ES" },
 ];
 const ALTERNATIVE_POSITIONS = [
     {
@@ -143,6 +149,8 @@ function Face({ onAnimationEnd }: IFaceProps) {
         }
     }, [position]);
 
+    useSayName(face);
+
     return (
         <motion.div
             className={`face face-${position}`}
@@ -151,9 +159,57 @@ function Face({ onAnimationEnd }: IFaceProps) {
             initial={initial}
             onAnimationComplete={onAnimationEnd}
         >
-            <img src={face} alt={""} />
+            <img src={face.fileName} alt={""} />
         </motion.div>
     );
 }
 
 export default Face;
+
+function useSayName(face: IFaceInfo) {
+    const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(
+        speechSynthesis.getVoices()
+    );
+    useEffect(() => {
+        const onVoicesChanged = () => {
+            if (!voices.length) {
+                setVoices(speechSynthesis.getVoices());
+                speechSynthesis.removeEventListener(
+                    "voiceschanged",
+                    onVoicesChanged
+                );
+            }
+        };
+        speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
+        return () => {
+            speechSynthesis.removeEventListener(
+                "voiceschanged",
+                onVoicesChanged
+            );
+        };
+    });
+
+    const selectedVoice = useMemo(() => {
+        if (!face || !voices) {
+            return null;
+        }
+        const voicesInLang = voices.filter(
+            (voice) => voice.lang === face.language
+        );
+        if (!voicesInLang.length) {
+            return null;
+        }
+        return getRandomFromArray(voicesInLang);
+    }, [voices, face]);
+
+    useEffect(() => {
+        if (!selectedVoice || !face) {
+            return;
+        }
+        let utterance = new SpeechSynthesisUtterance(face.name);
+        utterance.voice = selectedVoice;
+        utterance.pitch = 0.5 + Math.random();
+        utterance.rate = 0.5 + Math.random();
+        speechSynthesis.speak(utterance);
+    }, [face, selectedVoice]);
+}
