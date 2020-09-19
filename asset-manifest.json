@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pitxapie/static/css/main.f9edbc46.chunk.css",
-    "main.js": "/pitxapie/static/js/main.1d9f4558.chunk.js",
-    "main.js.map": "/pitxapie/static/js/main.1d9f4558.chunk.js.map",
+    "main.js": "/pitxapie/static/js/main.4d18befb.chunk.js",
+    "main.js.map": "/pitxapie/static/js/main.4d18befb.chunk.js.map",
     "runtime-main.js": "/pitxapie/static/js/runtime-main.99fd8e7d.js",
     "runtime-main.js.map": "/pitxapie/static/js/runtime-main.99fd8e7d.js.map",
     "static/js/2.fca41ccd.chunk.js": "/pitxapie/static/js/2.fca41ccd.chunk.js",
     "static/js/2.fca41ccd.chunk.js.map": "/pitxapie/static/js/2.fca41ccd.chunk.js.map",
     "index.html": "/pitxapie/index.html",
-    "precache-manifest.5273ad6db3b203a03ebce70b0f935726.js": "/pitxapie/precache-manifest.5273ad6db3b203a03ebce70b0f935726.js",
+    "precache-manifest.56dbd61a75029fe9ddc3a3649ab79f9f.js": "/pitxapie/precache-manifest.56dbd61a75029fe9ddc3a3649ab79f9f.js",
     "service-worker.js": "/pitxapie/service-worker.js",
     "static/css/main.f9edbc46.chunk.css.map": "/pitxapie/static/css/main.f9edbc46.chunk.css.map",
     "static/js/2.fca41ccd.chunk.js.LICENSE.txt": "/pitxapie/static/js/2.fca41ccd.chunk.js.LICENSE.txt",
@@ -63,6 +63,6 @@
     "static/js/runtime-main.99fd8e7d.js",
     "static/js/2.fca41ccd.chunk.js",
     "static/css/main.f9edbc46.chunk.css",
-    "static/js/main.1d9f4558.chunk.js"
+    "static/js/main.4d18befb.chunk.js"
   ]
 }
