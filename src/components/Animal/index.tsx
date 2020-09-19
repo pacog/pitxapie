@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { getRandomAnimal } from "./getRandomAnimal";
 import { playSound } from "utils/play-sound";
@@ -9,34 +9,32 @@ interface IAnimalProps {
     onAnimationEnd: () => void;
 }
 
-class Animal extends React.Component<IAnimalProps> {
-    initialX = getRandomPosition();
-    initialY = getRandomPosition();
-    randomAnimal = getRandomAnimal();
+function Animal({ onAnimationEnd }: IAnimalProps) {
+    const [initialX] = useState(getRandomPosition());
+    const [initialY] = useState(getRandomPosition());
+    const [randomAnimal] = useState(getRandomAnimal());
 
-    componentDidMount() {
-        const sound = getRandomFromArray(this.randomAnimal.sounds);
+    useEffect(() => {
+        const sound = getRandomFromArray(randomAnimal.sounds);
         playSound(process.env.PUBLIC_URL + sound);
-    }
+    }, [randomAnimal]);
 
-    render() {
-        return (
-            <motion.div
-                className="animal"
-                animate={{
-                    scale: [0, 1, 1, 1, 0]
-                }}
-                initial={{
-                    x: `${this.initialX}vw`,
-                    y: `${this.initialY}vh`,
-                    scale: 0.1
-                }}
-                onAnimationComplete={this.props.onAnimationEnd}
-            >
-                <img src={this.randomAnimal.src} alt={this.randomAnimal.name} />
-            </motion.div>
-        );
-    }
+    return (
+        <motion.div
+            className="animal"
+            animate={{
+                scale: [0, 1, 1, 1, 0],
+            }}
+            initial={{
+                x: `${initialX}vw`,
+                y: `${initialY}vh`,
+                scale: 0.1,
+            }}
+            onAnimationComplete={onAnimationEnd}
+        >
+            <img src={randomAnimal.src} alt={randomAnimal.name} />
+        </motion.div>
+    );
 }
 
 function getRandomPosition() {
