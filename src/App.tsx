@@ -17,7 +17,7 @@ function App() {
                     <Animals />
                 </Route>
             </Switch>
-            <RandomRouteButton />
+            <LongPressButton onPress={onRouteChangeRequest} />
         </Router>
     );
 }

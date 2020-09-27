@@ -5,11 +5,7 @@ import "./style.css";
 
 const TIME_TO_CHANGE = 2; // s
 
-function RandomRouteButton({
-    onRequestChange,
-}: {
-    onRequestChange: () => void;
-}) {
+function LongPressButton({ onPress }: { onPress: () => void }) {
     const currentTime = useRef<number>(0);
 
     const onStartTap = () => {
@@ -18,13 +14,13 @@ function RandomRouteButton({
     const onEndTap = () => {
         const elapsedTime = (performance.now() - currentTime.current) / 1000;
         if (elapsedTime >= TIME_TO_CHANGE) {
-            onRequestChange();
+            onPress();
         }
     };
 
     return (
         <motion.div
-            className="random-route-button"
+            className="long-press-button"
             onTapStart={onStartTap}
             onTap={onEndTap}
             initial={{ scale: 0.3, opacity: 0.1, backgroundColor: "#f48c06" }}
@@ -38,4 +34,4 @@ function RandomRouteButton({
     );
 }
 
-export default RandomRouteButton;
+export default LongPressButton;
