@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import "./style.css";
 
-const TIME_TO_CHANGE = 2; // s
+const TIME_TO_CHANGE = 1; // s
 
 function LongPressButton({ onPress }: { onPress: () => void }) {
     const currentTime = useRef<number>(0);
