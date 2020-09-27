@@ -1,22 +1,20 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import Animals from "pages/Animals";
-import Faces from "pages/Faces";
 import LocationChanger from "components/LocationChanger";
+import { routes } from "routes";
 import "./App.css";
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/faces">
-                    <Faces />
-                </Route>
-                <Route path="/">
-                    <Animals />
-                </Route>
+                {routes.map((route) => (
+                    <Route key={route.pathname} path={route.pathname}>
+                        <route.component />
+                    </Route>
+                ))}
             </Switch>
-            <LocationChanger />
+            <LocationChanger routes={routes} />
         </Router>
     );
 }
