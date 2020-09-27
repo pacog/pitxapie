@@ -1,0 +1,10 @@
+.random-route-button {
+    position: absolute;
+    top: 10vh;
+    right: 10vh;
+    background: red;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    z-index: 10;
+}

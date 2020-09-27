@@ -4,6 +4,7 @@ import Animals from "pages/Animals";
 import Faces from "pages/Faces";
 
 import "./App.css";
+import RandomRouteButton from "components/RandomRouteButton";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Animals />
                 </Route>
             </Switch>
+            <RandomRouteButton />
         </Router>
     );
 }
