@@ -8,7 +8,7 @@ import RandomRouteButton from "components/RandomRouteButton";
 
 function App() {
     return (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
             <Switch>
                 <Route path="/faces">
                     <Faces />
