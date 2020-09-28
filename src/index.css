@@ -22,4 +22,14 @@ code {
     height: calc(var(--vh, 1vh) * 100);
     min-width: 100vw;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-screen__title {
+    position: relative;
+    font-size: 10vh;
+    color: white;
+    opacity: 0.6;
 }
