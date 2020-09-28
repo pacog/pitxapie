@@ -16,6 +16,7 @@ function Faces() {
             <ColorChangeBG
                 className="faces"
                 colorList={["#40916c", "#52b788", "#74c69d"]}
+                title="caras"
             >
                 {showingFace && (
                     <Face onAnimationEnd={() => setShowingFace(false)} />

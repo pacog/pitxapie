@@ -14,7 +14,7 @@ function Animals() {
                 setShownAnimals([...shownAnimals, uuid()]);
             }}
         >
-            <ColorChangeBG className="animals">
+            <ColorChangeBG className="animals" title="animales">
                 {shownAnimals.map((id) => (
                     <Animal
                         key={id}
