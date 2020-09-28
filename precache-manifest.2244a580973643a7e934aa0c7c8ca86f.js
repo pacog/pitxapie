@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "00fc0d1c1515c4e9ba05cf58b2578123",
+    "revision": "7f7b9e3466a2830287819308624e5c57",
     "url": "/pitxapie/index.html"
   },
   {
-    "revision": "77f127ed8b7e48e387c3",
-    "url": "/pitxapie/static/css/main.f9edbc46.chunk.css"
+    "revision": "a122e46eba8110425d67",
+    "url": "/pitxapie/static/css/main.4d3eb1a5.chunk.css"
   },
   {
-    "revision": "edd8106d315307f83270",
-    "url": "/pitxapie/static/js/2.e786947b.chunk.js"
+    "revision": "5cb5489154b929102b36",
+    "url": "/pitxapie/static/js/2.27f755bf.chunk.js"
   },
   {
     "revision": "140fc86e4168497e75682586fc2dd9c5",
-    "url": "/pitxapie/static/js/2.e786947b.chunk.js.LICENSE.txt"
+    "url": "/pitxapie/static/js/2.27f755bf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "77f127ed8b7e48e387c3",
-    "url": "/pitxapie/static/js/main.3423233f.chunk.js"
+    "revision": "a122e46eba8110425d67",
+    "url": "/pitxapie/static/js/main.51492387.chunk.js"
   },
   {
     "revision": "6004250f49b6cf5df184",
