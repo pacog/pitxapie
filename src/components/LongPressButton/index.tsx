@@ -23,9 +23,9 @@ function LongPressButton({ onPress }: { onPress: () => void }) {
             className="long-press-button"
             onTapStart={onStartTap}
             onTap={onEndTap}
-            initial={{ scale: 0.3, opacity: 0.1, backgroundColor: "#f48c06" }}
+            initial={{ scale: 1, opacity: 0.1, backgroundColor: "#f48c06" }}
             whileTap={{
-                scale: 1,
+                scale: 3,
                 opacity: 0.8,
                 backgroundColor: "#fff",
                 transition: { duration: TIME_TO_CHANGE },
