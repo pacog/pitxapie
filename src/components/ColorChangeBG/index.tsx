@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import { motion } from "framer-motion";
+import Title from "./Title";
+import "./style.css";
 
 interface IColorChangeBGProps {
     className?: string;
@@ -21,18 +23,9 @@ function ColorChangeBG({
                 backgroundColor: colorList,
             }}
             transition={{ yoyo: Infinity, duration: 10, ease: "linear" }}
-            className={classNames("full-screen", className)}
+            className={classNames("color-change-bg", className)}
         >
-            {title && (
-                <motion.div
-                    className="full-screen__title"
-                    initial={{ opacity: 0.6 }}
-                    animate={{ opacity: 0 }}
-                    transition={{ duration: 1, ease: "easeIn" }}
-                >
-                    {title}
-                </motion.div>
-            )}
+            {title && <Title text={title} />}
             {children}
         </motion.div>
     );
