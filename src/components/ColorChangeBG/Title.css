@@ -3,4 +3,13 @@
     position: relative;
     font-size: 30vmin;
     color: white;
+    text-align: center;
+    padding: 5vmin;
+}
+
+@media (orientation: portrait) {
+    .color-change-bg__title {
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+    }
 }
