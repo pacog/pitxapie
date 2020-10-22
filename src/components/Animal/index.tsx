@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { getRandomAnimal } from "./getRandomAnimal";
+import { getRandomAnimal } from "assets/animals/getRandomAnimal";
 import { playSound } from "utils/play-sound";
 import { getRandomFromArray } from "utils/random";
 import "./style.css";
