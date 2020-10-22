@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getRandomAnimal } from "assets/animals/getRandomAnimal";
+import {
+    getRandomAnimal,
+    getRandomAnimalWithout,
+} from "assets/animals/getRandomAnimal";
 import { getRandomFromArray, getRandomWithLimits } from "utils/random";
-import "./WhackAnimal.css";
 import { playSound } from "utils/play-sound";
+import "./WhackAnimal.css";
 
 function WhackAnimal() {
     const [randomAnimal, setRandomAnimal] = useState(getRandomAnimal());
@@ -21,10 +24,10 @@ function WhackAnimal() {
     const onClick = () => {
         const sound = getRandomFromArray(randomAnimal.sounds);
         playSound(process.env.PUBLIC_URL + sound);
-        setRandomAnimal(getRandomAnimal());
+        setRandomAnimal(getRandomAnimalWithout(randomAnimal));
     };
     const onAnimationEnd = () => {
-        setRandomAnimal(getRandomAnimal());
+        setRandomAnimal(getRandomAnimalWithout(randomAnimal));
     };
 
     return (
