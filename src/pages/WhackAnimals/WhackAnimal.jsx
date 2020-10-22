@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { getRandomAnimal } from "assets/animals/getRandomAnimal";
+import { getRandomFromArray, getRandomWithLimits } from "utils/random";
 import "./WhackAnimal.css";
-import { getRandomWithLimits } from "utils/random";
+import { playSound } from "utils/play-sound";
 
 function WhackAnimal() {
     const [randomAnimal, setRandomAnimal] = useState(getRandomAnimal());
@@ -10,19 +12,37 @@ function WhackAnimal() {
         setIsShown(false);
         const timeout = setTimeout(() => {
             setIsShown(true);
-        }, getRandomWithLimits(1000, 5000));
+        }, getRandomWithLimits(3000, 8000));
         return () => {
             clearTimeout(timeout);
         };
     }, [randomAnimal]);
 
     const onClick = () => {
+        const sound = getRandomFromArray(randomAnimal.sounds);
+        playSound(process.env.PUBLIC_URL + sound);
+        setRandomAnimal(getRandomAnimal());
+    };
+    const onAnimationEnd = () => {
         setRandomAnimal(getRandomAnimal());
     };
 
     return (
         <div className="whack-animal" onClick={onClick}>
-            {shown && <img src={randomAnimal.src} alt={randomAnimal.name} />}
+            {shown && (
+                <motion.img
+                    src={randomAnimal.src}
+                    alt={randomAnimal.name}
+                    animate={{
+                        scale: [0, 1, 1, 1, 0],
+                    }}
+                    initial={{
+                        scale: 0.1,
+                    }}
+                    transition={{ duration: 5, ease: "easeInOut" }}
+                    onAnimationComplete={onAnimationEnd}
+                />
+            )}
         </div>
     );
 }
