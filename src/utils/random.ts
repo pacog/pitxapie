@@ -22,3 +22,7 @@ export function getRandomFromArrayWithWeights<T>(
     }
     throw new Error("getRandomFromArrayWithWeights, out of bounds");
 }
+
+export const getRandomWithLimits = (min: number, max: number) => {
+    return min + Math.random() * (max - min);
+};
