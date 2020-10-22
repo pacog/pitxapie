@@ -5,6 +5,16 @@
     color: white;
     text-align: center;
     padding: 5vmin;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (orientation: portrait) {
