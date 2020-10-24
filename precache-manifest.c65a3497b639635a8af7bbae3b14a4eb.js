@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f7ca02d7e8afcbb8a2abb1d0a0975be",
+    "revision": "dec9519ff5d4bae1344f4415fa7ed504",
     "url": "/pitxapie/index.html"
   },
   {
-    "revision": "78b30e53db9c2570030f",
+    "revision": "7a10bcbed12ef11e8edb",
     "url": "/pitxapie/static/css/main.4fea4dcd.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pitxapie/static/js/2.a9f73811.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "78b30e53db9c2570030f",
-    "url": "/pitxapie/static/js/main.e02c2236.chunk.js"
+    "revision": "7a10bcbed12ef11e8edb",
+    "url": "/pitxapie/static/js/main.80c74399.chunk.js"
   },
   {
     "revision": "6004250f49b6cf5df184",
