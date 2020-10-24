@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
     getRandomAnimal,
@@ -10,9 +10,10 @@ import "./WhackAnimal.css";
 
 function WhackAnimal() {
     const [randomAnimal, setRandomAnimal] = useState(getRandomAnimal());
-    const [shown, setIsShown] = useState(false);
+    const [isShown, setIsShown] = useState(false);
+    const [isAnimatingAfterClick, setIsAnimatingAfterClick] = useState(false);
+
     useEffect(() => {
-        setIsShown(false);
         const timeout = setTimeout(() => {
             setIsShown(true);
         }, getRandomWithLimits(3000, 8000));
@@ -21,28 +22,47 @@ function WhackAnimal() {
         };
     }, [randomAnimal]);
 
+    const animation = useMemo(() => {
+        if (isAnimatingAfterClick) {
+            return {
+                scale: [1, 1.2, 0],
+                rotate: [0, -15, 15, 0],
+            };
+        }
+        return {
+            scale: [0, 1, 1, 1, 0],
+        };
+    }, [isAnimatingAfterClick]);
+
+    const transition = useMemo(() => {
+        if (isAnimatingAfterClick) {
+            return { duration: 2, ease: "easeInOut" };
+        }
+        return { duration: 5, ease: "easeInOut" };
+    }, [isAnimatingAfterClick]);
+
     const onClick = () => {
         const sound = getRandomFromArray(randomAnimal.sounds);
         playSound(process.env.PUBLIC_URL + sound);
-        setRandomAnimal(getRandomAnimalWithout(randomAnimal));
+        setIsAnimatingAfterClick(true);
     };
     const onAnimationEnd = () => {
+        setIsShown(false);
+        setIsAnimatingAfterClick(false);
         setRandomAnimal(getRandomAnimalWithout(randomAnimal));
     };
 
     return (
         <div className="whack-animal" onClick={onClick}>
-            {shown && (
+            {isShown && (
                 <motion.img
                     src={randomAnimal.src}
                     alt={randomAnimal.name}
-                    animate={{
-                        scale: [0, 1, 1, 1, 0],
-                    }}
+                    animate={animation}
                     initial={{
                         scale: 0.1,
                     }}
-                    transition={{ duration: 5, ease: "easeInOut" }}
+                    transition={transition}
                     onAnimationComplete={onAnimationEnd}
                 />
             )}
