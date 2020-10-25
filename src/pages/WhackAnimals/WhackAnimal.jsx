@@ -66,6 +66,20 @@ function WhackAnimal() {
                     onAnimationComplete={onAnimationEnd}
                 />
             )}
+            {isAnimatingAfterClick && (
+                <motion.div
+                    className="whack-animal__on-click"
+                    // animate={{
+                    //     scale: 0.01,
+                    //     opacity: 0,
+                    // }}
+                    // initial={{
+                    //     scale: 1,
+                    //     opacity: 1,
+                    // }}
+                    // transition={transition}
+                />
+            )}
         </div>
     );
 }

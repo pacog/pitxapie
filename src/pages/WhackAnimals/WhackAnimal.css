@@ -2,6 +2,7 @@
     height: 50vh;
     width: 50vw;
     padding: 5vh;
+    position: relative;
 }
 
 .whack-animal img {
@@ -9,4 +10,38 @@
     width: 100%;
     object-fit: contain;
     object-position: center;
+    position: relative;
+    z-index: 2;
+}
+
+.whack-animal__on-click {
+    position: absolute;
+    height: 50vmin;
+    width: 50vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation-fill-mode: forwards;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+    transform-origin: center center;
+    animation-name: whack-animal__disappear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    opacity: 0.85;
+}
+
+@keyframes whack-animal__disappear {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+
+    10% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
 }
