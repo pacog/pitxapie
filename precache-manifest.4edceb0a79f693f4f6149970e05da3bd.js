@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dec9519ff5d4bae1344f4415fa7ed504",
+    "revision": "7a501acd85609c303b7de965a40949c6",
     "url": "/pitxapie/index.html"
   },
   {
-    "revision": "7a10bcbed12ef11e8edb",
-    "url": "/pitxapie/static/css/main.4fea4dcd.chunk.css"
+    "revision": "78cab9434ee4ac69a2dd",
+    "url": "/pitxapie/static/css/main.a99e6bfb.chunk.css"
   },
   {
-    "revision": "2d8f37d8670f3ffc41ea",
-    "url": "/pitxapie/static/js/2.a9f73811.chunk.js"
+    "revision": "fcf24e3765e83dacf312",
+    "url": "/pitxapie/static/js/2.5f93dddb.chunk.js"
   },
   {
     "revision": "140fc86e4168497e75682586fc2dd9c5",
-    "url": "/pitxapie/static/js/2.a9f73811.chunk.js.LICENSE.txt"
+    "url": "/pitxapie/static/js/2.5f93dddb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7a10bcbed12ef11e8edb",
-    "url": "/pitxapie/static/js/main.80c74399.chunk.js"
+    "revision": "78cab9434ee4ac69a2dd",
+    "url": "/pitxapie/static/js/main.46d24d2f.chunk.js"
   },
   {
     "revision": "6004250f49b6cf5df184",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "872d3ad3d213f51464ab46696acd53af",
     "url": "/pitxapie/static/media/aafke.872d3ad3.png"
+  },
+  {
+    "revision": "a776ffc86d954fc1ed7b86c991a316d4",
+    "url": "/pitxapie/static/media/abuela_belen.a776ffc8.png"
   },
   {
     "revision": "0511d4f87a3124804d35ff077b224141",
@@ -38,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f0ace14f5c24cdd7ab938ab6b45df174",
     "url": "/pitxapie/static/media/abuelomiguel.f0ace14f.png"
+  },
+  {
+    "revision": "194d4aed34074c55fb9f3593a35af6ca",
+    "url": "/pitxapie/static/media/abuelos_sierra.194d4aed.png"
   },
   {
     "revision": "ec1a80a1476b3ca239532cc60a273e13",
@@ -60,12 +68,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pitxapie/static/media/carla.0059e07b.png"
   },
   {
+    "revision": "afef557dea2ecd93cb4163b4f6a52322",
+    "url": "/pitxapie/static/media/carlos_bisa.afef557d.png"
+  },
+  {
     "revision": "7cc8bb076ef1e3248870723c6d157ca7",
     "url": "/pitxapie/static/media/carmen.7cc8bb07.png"
   },
   {
     "revision": "020ddd26d2cb36b7423df19990b6b43c",
     "url": "/pitxapie/static/media/carmen_aritz.020ddd26.png"
+  },
+  {
+    "revision": "384c6728d1e674746b0410e086540c60",
+    "url": "/pitxapie/static/media/caro_y_coco.384c6728.png"
   },
   {
     "revision": "cd900d62bc95bee22e75b928f26d926b",
@@ -100,6 +116,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pitxapie/static/media/elephant.6bf760fa.svg"
   },
   {
+    "revision": "58685a795aaaee5046e5a7c75ba3b7ee",
+    "url": "/pitxapie/static/media/encarnita.58685a79.png"
+  },
+  {
+    "revision": "95a2f844e2ef084121350ae150eeac6f",
+    "url": "/pitxapie/static/media/familia.95a2f844.png"
+  },
+  {
     "revision": "9e588f4c761c31737e948c777dc807a5",
     "url": "/pitxapie/static/media/fox.9e588f4c.svg"
   },
@@ -132,12 +156,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pitxapie/static/media/lion.99420a8e.svg"
   },
   {
+    "revision": "dbfbd343379f4f03e1441125e0db8294",
+    "url": "/pitxapie/static/media/lola-2.dbfbd343.png"
+  },
+  {
     "revision": "1694cf64303f1cbd412ea5f9bfc39205",
     "url": "/pitxapie/static/media/lola.1694cf64.png"
   },
   {
     "revision": "125cd58f8d1ea4b17bd105bc26bc5df8",
     "url": "/pitxapie/static/media/lucas.125cd58f.png"
+  },
+  {
+    "revision": "2f079e43377679bf136a6ddcaef7184b",
+    "url": "/pitxapie/static/media/maka-3.2f079e43.png"
   },
   {
     "revision": "b60cd436fdda22036731ab64c1955b10",
@@ -198,6 +230,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "da86707b80e0dfde926e79dc1d365d46",
     "url": "/pitxapie/static/media/sheep.da86707b.svg"
+  },
+  {
+    "revision": "c012698abb66c7a0ff2d60ac816db5e5",
+    "url": "/pitxapie/static/media/suzanne.c012698a.png"
+  },
+  {
+    "revision": "96e57883062972afeee8174ef7e0d23c",
+    "url": "/pitxapie/static/media/toby.96e57883.png"
   },
   {
     "revision": "3624f2e97810aeccf552904ae3feeea2",
