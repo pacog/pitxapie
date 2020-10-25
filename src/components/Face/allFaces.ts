@@ -28,6 +28,16 @@ import giovane from "./giovane.png";
 import mama from "./mama.png";
 import massimo from "./massimo.png";
 import xabi from "./xabi.png";
+import abuela_belen from "./abuela_belen.png";
+import abuelos_sierra from "./abuelos_sierra.png";
+import carlos_bisa from "./carlos_bisa.png";
+import caro_y_coco from "./caro_y_coco.png";
+import encarnita from "./encarnita.png";
+import familia from "./familia.png";
+import lola2 from "./lola-2.png";
+import maka3 from "./maka-3.png";
+import suzanne from "./suzanne.png";
+import toby from "./toby.png";
 
 export interface IFaceInfo {
     fileName: string;
@@ -66,4 +76,14 @@ export const ALL_FACES: IFaceInfo[] = [
     { fileName: mama, name: "mamá", language: "es-ES" },
     { fileName: massimo, name: "massimo", language: "it-IT" },
     { fileName: xabi, name: "xabi", language: "es-ES" },
+    { fileName: abuela_belen, name: "abuela belén", language: "es-ES" },
+    { fileName: abuelos_sierra, name: "abuelos sierra", language: "es-ES" },
+    { fileName: carlos_bisa, name: "tito carlos y bisa", language: "es-ES" },
+    { fileName: caro_y_coco, name: "carolina y guille", language: "es-ES" },
+    { fileName: encarnita, name: "encarnita", language: "es-ES" },
+    { fileName: familia, name: "familia", language: "es-ES" },
+    { fileName: lola2, name: "lola", language: "es-ES" },
+    { fileName: maka3, name: "tita maka", language: "es-ES" },
+    { fileName: suzanne, name: "suzanne", language: "en-US" },
+    { fileName: toby, name: "toby", language: "en-US" },
 ];
